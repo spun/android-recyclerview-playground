@@ -1,0 +1,5 @@
+<resources>
+    <string name="ase_app_name">Activity Shared Elements</string>
+    <string name="ase_title_activity_detail">DetailActivity</string>
+    <string name="ase_detail_image_content_description">Image detail</string>
+</resources>

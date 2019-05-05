@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ms_colorPrimary">#F44336</color>
+    <color name="ms_colorPrimaryDark">#D32F2F</color>
+    <color name="ms_colorAccent">#EEFF41</color>
+
+    <!-- Selection mode toolbar colors -->
+    <color name="ms_selection_colorPrimary">#9E9E9E</color>
+    <color name="ms_selection_colorPrimaryDark">#616161</color>
+</resources>

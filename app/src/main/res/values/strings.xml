@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RecyclerView Playground</string>
+
+    <string name="shared_element_section_title">Shared element</string>
+    <string name="shared_element_activity_button">Activity Transition</string>
+    <string name="shared_element_fragment_button">Fragment Transition \n (navigation component)</string>
+    <string name="multiple_selection_section_title">Multiple item selection</string>
+    <string name="multiple_selection_button">Grid selection</string>
+
+    <string name="credits">About</string>
+    <string name="credits_dialog_title">About</string>
+    <string name="credits_dialog_message" translatable="false"><div>Images made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/packs/landscapes-color" title="Flaticon">www.flaticon.com</a></div></string>
+</resources>

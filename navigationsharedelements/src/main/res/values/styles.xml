@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base module theme. -->
+    <style name="nse_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/nse_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/nse_colorPrimaryDark</item>
+        <item name="colorAccent">@color/nse_colorAccent</item>
+    </style>
+
+
+    <style name="nse_AppTheme.Grid" />
+
+
+    <style name="nse_AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="nse_AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>

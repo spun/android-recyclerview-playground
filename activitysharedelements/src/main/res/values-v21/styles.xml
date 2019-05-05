@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ase_AppTheme.Grid">
+        <item name="android:windowExitTransition">@transition/ase_grid_exit</item>
+        <item name="android:windowReenterTransition">@transition/ase_grid_reenter</item>
+    </style>
+
+    <style name="ase_AppTheme.Details">
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/ase_shared_main_detail
+        </item>
+    </style>
+</resources>

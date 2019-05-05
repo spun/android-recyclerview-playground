@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ms_item_scrim"
+        android:contentDescription="@null"
+        tools:src="@tools:sample/avatars" />
+
+    <!-- Selection visual changes -->
+    <FrameLayout
+        android:id="@+id/selectionFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!-- Selection scrim -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|end"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ms_item_scrim"
+            tools:src="@tools:sample/avatars" />
+
+        <!-- Selection checkbox -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:contentDescription="@null"
+            app:srcCompat="@drawable/ms_ic_check_circle_white_24dp"
+            tools:ignore="VectorDrawableCompat"
+            tools:src="@tools:sample/avatars" />
+
+    </FrameLayout>
+
+</FrameLayout>

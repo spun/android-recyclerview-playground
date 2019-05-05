@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="ase_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">    <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ase_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ase_colorPrimaryDark</item>
+        <item name="colorAccent">@color/ase_colorAccent</item>
+    </style>
+
+    <style name="ase_AppTheme.Grid" />
+
+    <style name="ase_AppTheme.Details" />
+
+</resources>

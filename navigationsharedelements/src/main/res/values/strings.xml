@@ -1,0 +1,4 @@
+<resources>
+    <string name="nse_app_name">Navigation Shared Elements</string>
+    <string name="nse_detail_image_content_description">Image detail</string>
+</resources>

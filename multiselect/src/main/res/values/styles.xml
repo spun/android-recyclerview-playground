@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="ms_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">    <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/ms_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ms_colorPrimaryDark</item>
+        <item name="colorAccent">@color/ms_colorAccent</item>
+    </style>
+
+    <style name="ms_AppTheme.Grid" />
+
+</resources>

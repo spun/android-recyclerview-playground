@@ -12,7 +12,7 @@
 
 Simple example of how to share an element between two activities + RecyclerView.
 
-<img src="screenshots/activity.gif" width="200" style="max-width:100%;">
+<img src="screenshots/activity_main.gif" width="200" style="max-width:100%;">
 
 The GridActivity RecyclerView is able to scroll to position if the element is hidden.
 
@@ -30,7 +30,7 @@ The GridActivity RecyclerView is able to scroll to position if the element is hi
 
 Same example as before but using the [navigation component](https://developer.android.com/guide/navigation) from jetpack to show the details fragment.
 
-<img src="screenshots/fragment.gif" width="200" style="max-width:100%;">
+<img src="screenshots/fragment_main.gif" width="200" style="max-width:100%;">
 
 :memo: **TO-DO**: Because shared elements in Fragment Transitions are not drawn in the overlay by default [[link]](https://stackoverflow.com/a/27906055), and also because each item of the RecyclerView has a different elevation, we might have problems when the item is returning to the grid.
 
@@ -46,7 +46,7 @@ In this example, we see how the item is partially occluded by other items that h
   [`Grid`](multiselect/src/main/java/com/spundev/multiselect/GridActivity.kt)
 `]`
 
-<img src="screenshots/multiselect.gif" width="200" style="max-width:100%;">
+<img src="screenshots/multiselect_main.gif" width="200" style="max-width:100%;">
 
 References:
 

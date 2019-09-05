@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         multiSelectButton.setOnClickListener {
             com.spundev.multiselect.GridActivity.start(this)
         }
+
+        // Open Fixed Header example
+        val fixedHeaderButton: Button = findViewById(R.id.fixedHeaderButton)
+        fixedHeaderButton.setOnClickListener {
+            com.spundev.fixedheader.FixedHeaderActivity.start(this)
+        }
     }
 
     /* ----------------------------------------------------------- */

@@ -13,6 +13,7 @@
         android:text="@string/shared_element_activity_button"
         app:layout_constraintBottom_toTopOf="@+id/sharedNavigationButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sharedTitleTextView" />
 
@@ -23,6 +24,7 @@
         android:text="@string/shared_element_fragment_button"
         app:layout_constraintBottom_toTopOf="@+id/multiSelectTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sharedActivityButton" />
 
@@ -31,8 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/multiple_selection_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fixedHeaderTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/multiSelectTextView" />
 
@@ -44,6 +47,7 @@
         android:text="@string/multiple_selection_section_title"
         app:layout_constraintBottom_toTopOf="@+id/multiSelectButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sharedNavigationButton" />
 
@@ -54,8 +58,32 @@
         android:text="@string/shared_element_section_title"
         app:layout_constraintBottom_toTopOf="@+id/sharedActivityButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/fixedHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/fixed_header_section_title"
+        app:layout_constraintBottom_toTopOf="@+id/fixedHeaderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiSelectButton" />
+
+    <Button
+        android:id="@+id/fixedHeaderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fixed_header_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fixedHeaderTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

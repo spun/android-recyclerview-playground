@@ -55,4 +55,18 @@ References:
 
 ---
 
+## Fixed header decoration
+
+`[`
+  [`ItemDecoration`](fixedheader/src/main/java/com/spundev/fixedheader/DateHeaderDecoration.kt)
+`]`
+
+<img src="screenshots/fixed_header_main.gif" width="200" style="max-width:100%;">
+
+References:
+
+- [ScheduleTimeHeadersDecoration](https://github.com/google/iosched/blob/master/mobile/src/main/java/com/google/samples/apps/iosched/ui/schedule/ScheduleTimeHeadersDecoration.kt) from [2019 Google I/O Android App](https://github.com/google/iosched)
+
+---
+
 Images made by [Freepik](https://www.flaticon.com/authors/freepik "Freepik") from [www.flaticon.com](https://www.flaticon.com/packs/landscapes-color "Flaticon")

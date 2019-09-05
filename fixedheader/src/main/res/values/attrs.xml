@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="fix_DateHeader">
+        <attr name="android:width" />
+        <attr name="android:padding" />
+        <attr name="android:textColor" />
+        <attr name="android:fontFamily" />
+        <attr name="fix_monthTextSize" format="dimension" />
+        <attr name="fix_dayTextSize" format="dimension" />
+    </declare-styleable>
+</resources>

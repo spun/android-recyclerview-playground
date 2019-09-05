@@ -1,2 +1,3 @@
 include ':app', ':activitysharedelements', ':navigationsharedelements', ':multiselect', ':commonresources'
 rootProject.name='RecyclerView Playground'
+include ':fixedheader'

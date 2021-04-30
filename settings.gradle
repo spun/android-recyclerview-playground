@@ -1,3 +1,2 @@
-include ':app', ':activitysharedelements', ':navigationsharedelements', ':multiselect', ':commonresources'
+include ':app', ':activitysharedelements', ':navigationsharedelements', ':multiselect', ':commonresources', ':fixedheader', ':autoscroll'
 rootProject.name='RecyclerView Playground'
-include ':fixedheader'

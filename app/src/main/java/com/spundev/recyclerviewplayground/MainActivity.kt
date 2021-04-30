@@ -41,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         fixedHeaderButton.setOnClickListener {
             com.spundev.fixedheader.FixedHeaderActivity.start(this)
         }
+
+        // Open Auto scroll example
+        val autoScrollButton: Button = findViewById(R.id.autoScrollButton)
+        autoScrollButton.setOnClickListener {
+            com.spundev.autoscroll.AutoScrollActivity.start(this)
+        }
     }
 
     /* ----------------------------------------------------------- */

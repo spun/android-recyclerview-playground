@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AutoScrollActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/auto_scroll_recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/auto_scroll_radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/asc_rv_item" />
+
+    <RadioGroup
+        android:id="@+id/auto_scroll_radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:checkedButton="@+id/none_radio_button"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/none_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/asc_none_button" />
+
+        <RadioButton
+            android:id="@+id/top_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/asc_top_button" />
+
+        <RadioButton
+            android:id="@+id/bottom_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/asc_bottom_button" />
+
+        <RadioButton
+            android:id="@+id/top_plus_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/asc_top_plus_move_button" />
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

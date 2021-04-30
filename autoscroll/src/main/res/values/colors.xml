@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="asc_colorPrimary">#9E9E9E</color>
+    <color name="asc_colorPrimaryDark">#616161</color>
+    <color name="asc_colorAccent">#FF5252</color>
+
+    <color name="asc_green_pastel">#75e6a2</color>
+    <color name="asc_blue_pastel">#7fe0eb</color>
+    <color name="asc_red_pastel">#d9654e</color>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="asc_app_name">Auto scroll</string>
+    <string name="asc_action_add_to_top">Add to top</string>
+    <string name="asc_action_add_to_bottom">Add to bottom</string>
+    <string name="asc_none_button">None</string>
+    <string name="asc_top_button">Top</string>
+    <string name="asc_bottom_button">Bottom</string>
+    <string name="asc_top_plus_move_button">Top + onMove</string>
+</resources>

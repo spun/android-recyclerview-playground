@@ -12,4 +12,6 @@
     <string name="credits_dialog_message" translatable="false"><div>Images made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/packs/landscapes-color" title="Flaticon">www.flaticon.com</a></div></string>
     <string name="fixed_header_section_title">Fixed header</string>
     <string name="fixed_header_button">Fixed header</string>
+    <string name="auto_scroll_section_title">Auto scroll</string>
+    <string name="auto_scroll_button">Auto Scroll</string>
 </resources>

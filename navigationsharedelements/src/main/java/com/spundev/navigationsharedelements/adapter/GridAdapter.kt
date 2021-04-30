@@ -40,7 +40,7 @@ class GridAdapter internal constructor(
         private val image: ImageView = itemView.findViewById(R.id.imageView)
 
         init {
-            itemView.setOnClickListener { onItemClick(adapterPosition, image) }
+            itemView.setOnClickListener { onItemClick(bindingAdapterPosition, image) }
         }
 
         fun bindTo(item: ItemModel) {

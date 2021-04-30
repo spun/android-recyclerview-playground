@@ -32,18 +32,17 @@ class GridFragment : Fragment() {
         // ViewGroupCompat.setTransitionGroup(recyclerView, true)
 
         val adapter = GridAdapter(requireContext()) { id, view ->
-            // Transitions
-            exitTransition = MaterialElevationScale(false).apply {
-                duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
-            }
-            reenterTransition = MaterialElevationScale(true).apply {
-                duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
-            }
-
             // Navigation action
             val action = GridFragmentDirections.actionGridToDetail(id)
             // Shared element
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                // Transitions
+                exitTransition = MaterialElevationScale(false).apply {
+                    duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+                }
+                reenterTransition = MaterialElevationScale(true).apply {
+                    duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+                }
                 // Shared element details
                 val extras =
                     FragmentNavigatorExtras(view to ResourcesData.instance[id].transitionName)

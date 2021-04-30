@@ -1,7 +1,5 @@
 package com.spundev.navigationsharedelements
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -9,9 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
-import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialArcMotion
@@ -26,11 +21,13 @@ class DetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // Shared element transition
-        sharedElementEnterTransition = MaterialContainerTransform().apply {
-            drawingViewId = R.id.my_nav_host_fragment
-            duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
-            scrimColor = Color.TRANSPARENT
-            setPathMotion(MaterialArcMotion())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sharedElementEnterTransition = MaterialContainerTransform().apply {
+                drawingViewId = R.id.my_nav_host_fragment
+                duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+                scrimColor = Color.TRANSPARENT
+                setPathMotion(MaterialArcMotion())
+            }
         }
     }
 

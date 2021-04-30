@@ -69,4 +69,40 @@ References:
 
 ---
 
+## Auto scroll
+
+"Lock" the scroll of a RecyclerView to the Top/Bottom so we can see when new items are added.
+
+### Item insert
+
+New items inserted to the end of the RecyclerView are (by default) not visible until we scroll. Same behaviour if we add items to the start of the list.
+
+<img src="screenshots/autoscroll/none_add_bottom.gif" width="200" style="max-width:100%;">
+
+**Solution (chat app behaviour)**: We can use a RecyclerView.AdapterDataObserver to receive "onItemRangeInserted" events and scroll automatically if some conditions are met (if we are inserting an item (or items) to the end of the list and if the user was already looking at the end).
+
+<img src="screenshots/autoscroll/bottom_add_bottom.gif" width="200" style="max-width:100%;">
+
+`[`
+  [`ScrollToTop`](autoscroll/src/main/java/com/spundev/autoscroll/scrollObservers/MyScrollToTopObserver.kt)
+`|`
+  [`ScrollToBottom`](autoscroll/src/main/java/com/spundev/autoscroll/scrollObservers/MyScrollToBottomObserver.kt)
+`]`
+
+### Item position changes
+
+If we have an ordered list (i.e.: green on top) and the order of items changes, the RecyclerView can scroll to keep visible the item it considers important. Depending on the needs of your app, it might appear as if the RecyclerView is scrolling when it shouldn't and can cause confusion to the users.
+
+<img src="screenshots/autoscroll/top_move.gif" width="200" style="max-width:100%;">
+
+**Solution (don't move too much)**: We can use the same RecyclerView.AdapterDataObserver to receive "onItemRangeMoved" events and keep the scroll where it was.
+
+<img src="screenshots/autoscroll/top_plus_move.gif" width="200" style="max-width:100%;">
+
+`[`
+  [`ScrollToTopPlus`](autoscroll/src/main/java/com/spundev/autoscroll/scrollObservers/MyScrollToTopPlusObserver.kt)
+`]`
+
+---
+
 Images made by [Freepik](https://www.flaticon.com/authors/freepik "Freepik") from [www.flaticon.com](https://www.flaticon.com/packs/landscapes-color "Flaticon")

@@ -1,14 +1,21 @@
 package com.spundev.navigationsharedelements
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.transition.TransitionInflater
+import com.google.android.material.transition.MaterialArcMotion
+import com.google.android.material.transition.MaterialContainerTransform
 import com.spundev.commonresources.data.ResourcesData
 
 class DetailFragment : Fragment() {
@@ -19,27 +26,18 @@ class DetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // Shared element transition
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            /*val ts = TransitionSet()
-            // This transition captures the layout bounds of target views before and after
-            // the scene change and animates those changes during the transition.
-            ts.addTransition(ChangeBounds())
-            // This Transition captures an ImageView's matrix before and after the scene change
-            // and animates it during the transition.
-            // In combination with ChangeBounds, ChangeImageTransform allows ImageViews that
-            // change size, shape, or ImageView.ScaleType to animate contents smoothly.
-            ts.addTransition(ChangeImageTransform())
-            sharedElementEnterTransition = ts*/
-
-            // Alternative
-            sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        sharedElementEnterTransition = MaterialContainerTransform().apply {
+            drawingViewId = R.id.my_nav_host_fragment
+            duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+            scrimColor = Color.TRANSPARENT
+            setPathMotion(MaterialArcMotion())
         }
     }
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.nse_fragment_detail, container, false)

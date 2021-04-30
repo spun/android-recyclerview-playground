@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.transition.MaterialElevationScale
 import com.spundev.commonresources.data.ResourcesData
 import com.spundev.navigationsharedelements.adapter.GridAdapter
 
@@ -19,21 +20,33 @@ class GridFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.nse_fragment_grid, container, false)
 
         // RecyclerView
         recyclerView = rootView.findViewById(R.id.recyclerview)
+        // If we want to animate the recyclerView as a group
+        // ViewGroupCompat.setTransitionGroup(recyclerView, true)
+
         val adapter = GridAdapter(requireContext()) { id, view ->
+            // Transitions
+            exitTransition = MaterialElevationScale(false).apply {
+                duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+            }
+            reenterTransition = MaterialElevationScale(true).apply {
+                duration = resources.getInteger(R.integer.nse_motion_duration_large).toLong()
+            }
+
             // Navigation action
             val action = GridFragmentDirections.actionGridToDetail(id)
             // Shared element
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 // Shared element details
-                val extras = FragmentNavigatorExtras(view to ResourcesData.instance[id].transitionName)
+                val extras =
+                    FragmentNavigatorExtras(view to ResourcesData.instance[id].transitionName)
                 view.findNavController().navigate(action, extras)
             } else {
                 view.findNavController().navigate(action)

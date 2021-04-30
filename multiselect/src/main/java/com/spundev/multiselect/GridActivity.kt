@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -113,9 +114,9 @@ class GridActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         // Save the user's current selected items
-        outState?.run {
+        outState.run {
             selectionTracker.onSaveInstanceState(outState)
         }
         // Always call the superclass so it can save the view hierarchy state

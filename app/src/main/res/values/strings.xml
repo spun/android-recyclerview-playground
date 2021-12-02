@@ -13,5 +13,6 @@
     <string name="fixed_header_section_title">Fixed header</string>
     <string name="fixed_header_button">Fixed header</string>
     <string name="auto_scroll_section_title">Auto scroll</string>
-    <string name="auto_scroll_button">Auto Scroll</string>
+    <string name="auto_scroll_list_button">List</string>
+    <string name="auto_scroll_grid_button">Grid</string>
 </resources>

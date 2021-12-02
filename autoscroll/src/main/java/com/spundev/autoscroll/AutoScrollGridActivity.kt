@@ -7,27 +7,27 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.spundev.autoscroll.adapter.AutoScrollAdapter
-import com.spundev.autoscroll.databinding.AscAutoScrollActivityBinding
+import com.spundev.autoscroll.adapter.AutoScrollGridAdapter
+import com.spundev.autoscroll.databinding.AscAutoScrollGridActivityBinding
 import com.spundev.autoscroll.model.AutoScrollItem
 import com.spundev.autoscroll.scrollObservers.MyScrollToBottomObserver
 import com.spundev.autoscroll.scrollObservers.MyScrollToTopObserver
 import com.spundev.autoscroll.scrollObservers.MyScrollToTopPlusObserver
 
-class AutoScrollActivity : AppCompatActivity() {
+class AutoScrollGridActivity : AppCompatActivity() {
 
-    private lateinit var binding: AscAutoScrollActivityBinding
+    private lateinit var binding: AscAutoScrollGridActivityBinding
 
     private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var adapter: AutoScrollAdapter
+    private lateinit var adapter: AutoScrollGridAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = AscAutoScrollActivityBinding.inflate(layoutInflater)
+        binding = AscAutoScrollGridActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         prepareRecyclerView()
@@ -39,11 +39,11 @@ class AutoScrollActivity : AppCompatActivity() {
     private fun prepareRecyclerView() {
 
         // Layout manager
-        layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        layoutManager = GridLayoutManager(this, 3)
         binding.autoScrollRecyclerView.layoutManager = layoutManager
 
         // Create adapter
-        adapter = AutoScrollAdapter(this,
+        adapter = AutoScrollGridAdapter(this,
             onClick = { item ->
                 val newList = adapter.currentList.map { listItem ->
                     if (listItem.id == item.id) {
@@ -57,16 +57,10 @@ class AutoScrollActivity : AppCompatActivity() {
 
         // Set adapter
         binding.autoScrollRecyclerView.adapter = adapter
-        binding.autoScrollRecyclerView.addItemDecoration(
-            DividerItemDecoration(
-                this,
-                DividerItemDecoration.VERTICAL
-            )
-        )
 
         // Update adapter content
         // Create a list of 5 items with ids from 100 to 104
-        val itemsList = List(5) {
+        val itemsList = List(12) {
             val id = it + 100
             AutoScrollItem(id, "Item $id", false)
         }
@@ -112,14 +106,14 @@ class AutoScrollActivity : AppCompatActivity() {
                     adapter.registerAdapterDataObserver(bottomScrollObserver)
                 }
                 R.id.top_plus_radio_button -> {
-                // Unregister old AdapterDataObserver
-                currentObserver?.let {
-                    adapter.unregisterAdapterDataObserver(it)
+                    // Unregister old AdapterDataObserver
+                    currentObserver?.let {
+                        adapter.unregisterAdapterDataObserver(it)
+                    }
+                    // Register MyScrollToTopPlusObserver
+                    currentObserver = topPlusScrollObserver
+                    adapter.registerAdapterDataObserver(topPlusScrollObserver)
                 }
-                // Register MyScrollToTopPlusObserver
-                currentObserver = topPlusScrollObserver
-                adapter.registerAdapterDataObserver(topPlusScrollObserver)
-            }
             }
         }
     }
@@ -170,7 +164,7 @@ class AutoScrollActivity : AppCompatActivity() {
 
     companion object {
         fun start(context: Context) {
-            val starter = Intent(context, AutoScrollActivity::class.java)
+            val starter = Intent(context, AutoScrollGridActivity::class.java)
             context.startActivity(starter)
         }
     }

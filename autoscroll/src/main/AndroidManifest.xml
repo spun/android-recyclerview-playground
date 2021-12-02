@@ -4,9 +4,14 @@
 
     <application>
         <activity
-            android:name=".AutoScrollActivity"
-            android:label="@string/asc_app_name"
-            android:theme="@style/asc_AppTheme"  />
+            android:name=".AutoScrollListActivity"
+            android:label="@string/asc_list_activity_title"
+            android:theme="@style/asc_AppTheme" />
+
+        <activity
+            android:name=".AutoScrollGridActivity"
+            android:label="@string/asc_grid_activity_title"
+            android:theme="@style/asc_AppTheme" />
     </application>
 
 </manifest>

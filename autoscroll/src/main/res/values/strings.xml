@@ -1,5 +1,7 @@
 <resources>
     <string name="asc_app_name">Auto scroll</string>
+    <string name="asc_list_activity_title">Auto scroll list</string>
+    <string name="asc_grid_activity_title">Auto scroll grid</string>
     <string name="asc_action_add_to_top">Add to top</string>
     <string name="asc_action_add_to_bottom">Add to bottom</string>
     <string name="asc_none_button">None</string>

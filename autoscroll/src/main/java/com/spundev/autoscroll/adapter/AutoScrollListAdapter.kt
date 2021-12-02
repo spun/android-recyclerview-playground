@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.spundev.autoscroll.R
-import com.spundev.autoscroll.databinding.AscRvItemBinding
+import com.spundev.autoscroll.databinding.AscRvListItemBinding
 import com.spundev.autoscroll.model.AutoScrollItem
 
-class AutoScrollAdapter internal constructor(
+class AutoScrollListAdapter internal constructor(
     context: Context,
     val onClick: (item: AutoScrollItem) -> Unit,
-) : ListAdapter<AutoScrollItem, AutoScrollAdapter.EpisodeViewHolder>(object :
+) : ListAdapter<AutoScrollItem, AutoScrollListAdapter.EpisodeViewHolder>(object :
     DiffUtil.ItemCallback<AutoScrollItem>() {
     override fun areItemsTheSame(oldItem: AutoScrollItem, newItem: AutoScrollItem) =
         oldItem.id == newItem.id
@@ -33,8 +33,8 @@ class AutoScrollAdapter internal constructor(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
-        val binding: AscRvItemBinding =
-            AscRvItemBinding.inflate(inflater, parent, false)
+        val binding: AscRvListItemBinding =
+            AscRvListItemBinding.inflate(inflater, parent, false)
         return EpisodeViewHolder(binding)
     }
 
@@ -48,7 +48,7 @@ class AutoScrollAdapter internal constructor(
     val greenColor = ContextCompat.getColor(context, R.color.asc_green_pastel)
 
     inner class EpisodeViewHolder(
-        private val binding: AscRvItemBinding
+        private val binding: AscRvListItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         private var currentItem: AutoScrollItem? = null

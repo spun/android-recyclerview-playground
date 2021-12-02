@@ -97,23 +97,41 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/auto_scroll_section_title"
-            app:layout_constraintBottom_toTopOf="@+id/autoScrollButton"
+            app:layout_constraintBottom_toTopOf="@+id/autoScrollListButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fixedHeaderButton" />
 
         <Button
-            android:id="@+id/autoScrollButton"
+            android:id="@+id/autoScrollListButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:layout_marginBottom="24dp"
-            android:text="@string/auto_scroll_button"
+            android:text="@string/auto_scroll_list_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/autoScrollGridButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/autoScrollTextView" />
+
+        <Button
+            android:id="@+id/autoScrollGridButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/auto_scroll_grid_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/autoScrollTextView" />
+            app:layout_constraintStart_toEndOf="@+id/autoScrollListButton"
+            app:layout_constraintTop_toBottomOf="@+id/autoScrollTextView"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

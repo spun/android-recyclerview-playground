@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="swa_swipe_green">#5bb974</color>
+    <color name="swa_swipe_orange">#fa903e</color>
+    <color name="swa_swipe_red">#ee675c</color>
+    <color name="swa_swipe_blue">#669df6</color>
+</resources>

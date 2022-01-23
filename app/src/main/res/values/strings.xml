@@ -6,6 +6,8 @@
     <string name="shared_element_fragment_button">Fragment Transition \n (navigation component)</string>
     <string name="multiple_selection_section_title">Multiple item selection</string>
     <string name="multiple_selection_button">Grid selection</string>
+    <string name="swipe_actions_title">Swipe actions</string>
+    <string name="swipe_actions_button">Swipe</string>
 
     <string name="credits">About</string>
     <string name="credits_dialog_title">About</string>

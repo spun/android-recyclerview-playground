@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/fixedheader" />
             <option value="$PROJECT_DIR$/multiselect" />
             <option value="$PROJECT_DIR$/navigationsharedelements" />
+            <option value="$PROJECT_DIR$/swipeactions" />
           </set>
         </option>
       </GradleProjectSettings>

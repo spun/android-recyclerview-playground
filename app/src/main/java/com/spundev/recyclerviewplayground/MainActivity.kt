@@ -51,6 +51,12 @@ class MainActivity : AppCompatActivity() {
         autoScrollGridButton.setOnClickListener {
             com.spundev.autoscroll.AutoScrollGridActivity.start(this)
         }
+
+        // Open Swipe examples
+        val swipeActionsListButton: Button = findViewById(R.id.swipeActionsButton)
+        swipeActionsListButton.setOnClickListener {
+            com.spundev.swipeactions.SwipeActivity.start(this)
+        }
     }
 
     /* ----------------------------------------------------------- */

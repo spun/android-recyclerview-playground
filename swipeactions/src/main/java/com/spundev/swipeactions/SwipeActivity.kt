@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
@@ -34,7 +33,7 @@ class SwipeActivity : AppCompatActivity() {
 
         // We use a MutableStateFlow instead of a simple list to emulate the events of an app that
         // uses a database and notifies the adapter when something changes
-        val initialList = List(5) { id -> SwipeItem(id, "Item $id") }
+        val initialList = List(8) { id -> SwipeItem(id, "Item $id") }
         val itemsList: MutableStateFlow<List<SwipeItem>> = MutableStateFlow(initialList)
 
         // Layout manager
@@ -84,6 +83,9 @@ class SwipeActivity : AppCompatActivity() {
                 itemsList.value = list
             }
         ).attachToRecyclerView(binding.swipeActionsRecyclerView)
+
+        // Fill void left by the item swiped during animation
+        binding.swipeActionsRecyclerView.addItemDecoration(SwipeVoidDecoration(this))
 
         // Update adapter content
         lifecycleScope.launch {

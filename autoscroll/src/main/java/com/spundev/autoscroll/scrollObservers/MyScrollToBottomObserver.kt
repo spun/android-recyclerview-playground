@@ -27,11 +27,13 @@ class MyScrollToBottomObserver(
         // user is at the bottom of the list, scroll to the bottom
         // of the list to show the newly added item.
         val loading = lastVisiblePosition == -1
-        val atBottom =
-            positionStart >= count - itemCount && lastVisiblePosition == positionStart - 1
-        if (loading || atBottom) {
-            val endPosition = positionStart + itemCount - 1
-            recycler.scrollToPosition(endPosition)
+        if (!loading) {
+            val atBottom =
+                positionStart >= count - itemCount && lastVisiblePosition == positionStart - 1
+            if (atBottom) {
+                val endPosition = positionStart + itemCount - 1
+                recycler.scrollToPosition(endPosition)
+            }
         }
     }
 }

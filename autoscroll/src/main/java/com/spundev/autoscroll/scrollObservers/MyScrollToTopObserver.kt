@@ -18,9 +18,11 @@ open class MyScrollToTopObserver(
         // user is at the top of the list, scroll to the top
         // of the list to show the newly added item.
         val loading = firstVisiblePosition == -1
-        val atTop = firstVisiblePosition == 0
-        if (loading || atTop) {
-            recycler.scrollToPosition(0)
+        if (!loading) {
+            val atTop = firstVisiblePosition == 0
+            if (atTop) {
+                recycler.scrollToPosition(0)
+            }
         }
     }
 }
